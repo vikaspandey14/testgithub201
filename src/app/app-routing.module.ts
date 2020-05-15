@@ -1,7 +1,18 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { RouterModule,Routes  } from '@angular/router';
+import {HomeComponent} from './home/home.component';
+import {TextcompareComponent} from './textcompare/textcompare.component';
 
-const routes: Routes = [];
+
+
+export const routes: Routes = [
+{ path :'',component:TextcompareComponent},
+{ path :'home',component:HomeComponent },
+{ path: 'textcompare', component: TextcompareComponent },
+  // otherwise redirect to home
+  {path: '**', redirectTo: ''}
+
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
